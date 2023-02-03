@@ -49,6 +49,7 @@
     <Compile Include="04-抽象工厂模式\AbstractFactory.cs" />
     <Compile Include="05-建造者模式\Builder.cs" />
     <Compile Include="06-原型模式\Prototype.cs" />
+    <Compile Include="07-适配器模式\Adapter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

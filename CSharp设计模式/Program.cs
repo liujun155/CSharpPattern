@@ -78,6 +78,16 @@ namespace CSharp设计模式
             Console.WriteLine($"Cloned: {cloneMonkeyKing2.Id}");
             #endregion
 
+            #region 适配器模式
+            Console.WriteLine("==========适配器模式==========");
+            //类的适配器模式
+            IThreeHole threeHole = new PowerAdapter();
+            threeHole.Request();
+            //对象的适配器模式
+            ThreeHole2 threeHole2 = new PowerAdapter2();
+            threeHole2.Request();
+            #endregion
+
             Console.ReadLine();
         }
     }
