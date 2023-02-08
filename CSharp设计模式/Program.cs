@@ -11,7 +11,7 @@ namespace CSharp设计模式
         static void Main(string[] args)
         {
             #region 简单工厂模式
-            Console.WriteLine("==========简单工厂模式==========");
+            Console.WriteLine("===============简单工厂模式===============");
             Food food1 = FoodSimpleFactory.CreateFood("西红柿炒蛋");
             food1.Print();
             Food food2 = FoodSimpleFactory.CreateFood("土豆肉丝");
@@ -19,7 +19,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 工厂方法模式
-            Console.WriteLine("==========工厂方法模式==========");
+            Console.WriteLine("===============工厂方法模式===============");
             // 初始化做菜的两个工厂
             Creator tomatoScrambledEggsFactory = new TomatoScrambledEggsFactory();
             Creator shreddedPorkWithPotatoesFactory = new ShreddedPorkWithPotatoesFactory();
@@ -32,7 +32,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 抽象工厂模式
-            Console.WriteLine("==========抽象工厂模式==========");
+            Console.WriteLine("===============抽象工厂模式===============");
             // 奔驰工厂制造奔驰的轿车和SUV
             AbstractFactory benzFactory = new BenzFactory();
             Car benzCar = benzFactory.CreateCar();
@@ -48,7 +48,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 建造者模式
-            Console.WriteLine("==========建造者模式==========");
+            Console.WriteLine("===============建造者模式===============");
             // 客户找到电脑城老板说要买电脑，这里要装两台电脑
             // 创建指挥者和构造者
             Director director = new Director();
@@ -66,7 +66,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 原型模式
-            Console.WriteLine("==========原型模式==========");
+            Console.WriteLine("===============原型模式===============");
             // 孙悟空原型
             MonkeyKingPrototype monkeyKingPrototype = new ConcretePrototype("MonkeyKing");
 
@@ -79,7 +79,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 适配器模式
-            Console.WriteLine("==========适配器模式==========");
+            Console.WriteLine("===============适配器模式===============");
             //类的适配器模式
             IThreeHole threeHole = new PowerAdapter();
             threeHole.Request();
@@ -89,7 +89,7 @@ namespace CSharp设计模式
             #endregion
 
             #region 桥接模式
-            Console.WriteLine("==========桥接模式==========");
+            Console.WriteLine("===============桥接模式===============");
             RemoteControl remoteControl = new ConcreteRemote();
             //长虹电视
             remoteControl.Implementor = new ChangHong();
@@ -101,6 +101,28 @@ namespace CSharp设计模式
             remoteControl.On();
             remoteControl.Off();
             remoteControl.TurnChannel();
+            #endregion
+
+            #region 装饰者模式
+            Console.WriteLine("===============装饰者模式===============");
+            //一个苹果手机
+            Phone phone = new ApplePhone();
+            //现在贴膜
+            Decorator applePhoneWithSticker = new Sticker(phone);
+            //扩展贴膜行为
+            applePhoneWithSticker.Print();
+            Console.WriteLine("----------------------\n");
+
+            //现在有个手机挂件
+            Decorator applePhoneWithAccessories = new Accessories(phone);
+            //扩展手机挂件行为
+            applePhoneWithAccessories.Print();
+            Console.WriteLine("----------------------\n");
+
+            //同时有贴膜和手机挂件
+            Sticker sticker = new Sticker(phone);
+            Accessories applePhoneWithAccessoriesAndSticker = new Accessories(sticker);
+            applePhoneWithAccessoriesAndSticker.Print();
             #endregion
 
             Console.ReadLine();
