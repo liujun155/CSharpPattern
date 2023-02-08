@@ -88,6 +88,21 @@ namespace CSharp设计模式
             threeHole2.Request();
             #endregion
 
+            #region 桥接模式
+            Console.WriteLine("==========桥接模式==========");
+            RemoteControl remoteControl = new ConcreteRemote();
+            //长虹电视
+            remoteControl.Implementor = new ChangHong();
+            remoteControl.On();
+            remoteControl.Off();
+            remoteControl.TurnChannel();
+            //三星电视
+            remoteControl.Implementor = new Samsung();
+            remoteControl.On();
+            remoteControl.Off();
+            remoteControl.TurnChannel();
+            #endregion
+
             Console.ReadLine();
         }
     }
