@@ -125,6 +125,33 @@ namespace CSharp设计模式
             applePhoneWithAccessoriesAndSticker.Print();
             #endregion
 
+            #region 组合模式
+            Console.WriteLine("===============组合模式===============");
+            ComplexGraphics complexGraphics = new ComplexGraphics("一个复杂图形和两条线段组成的复杂图形");
+            complexGraphics.Add(new Line("线段A"));
+            ComplexGraphics compositeCG = new ComplexGraphics("一个圆和一条线组成的复杂图形");
+            compositeCG.Add(new Circle("圆"));
+            compositeCG.Add(new Circle("线段B"));
+            complexGraphics.Add(compositeCG);
+            Line l = new Line("线段C");
+            complexGraphics.Add(l);
+
+            // 显示复杂图形的画法
+            Console.WriteLine("复杂图形的绘制如下：");
+            Console.WriteLine("---------------------");
+            complexGraphics.Draw();
+            Console.WriteLine("复杂图形绘制完成");
+            Console.WriteLine("---------------------");
+
+            // 移除一个组件再显示复杂图形的画法
+            complexGraphics.Remove(l);
+            Console.WriteLine("移除线段C后，复杂图形的绘制如下：");
+            Console.WriteLine("---------------------");
+            complexGraphics.Draw();
+            Console.WriteLine("复杂图形绘制完成");
+            Console.WriteLine("---------------------");
+            #endregion
+
             Console.ReadLine();
         }
     }

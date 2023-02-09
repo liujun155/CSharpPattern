@@ -52,6 +52,7 @@
     <Compile Include="07-适配器模式\Adapter.cs" />
     <Compile Include="08-桥接模式\Bridge.cs" />
     <Compile Include="09-装饰者模式\Decorator.cs" />
+    <Compile Include="10-组合模式\Composite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
