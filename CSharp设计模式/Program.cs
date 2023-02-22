@@ -185,6 +185,11 @@ namespace CSharp设计模式
             CommandExample.Run();
             #endregion
 
+            #region 迭代器模式
+            Console.WriteLine("\n===============迭代器模式===============");
+            IteratorExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
