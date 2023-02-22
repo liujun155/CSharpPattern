@@ -170,6 +170,11 @@ namespace CSharp设计模式
             FlyWeightExample.Run();
             #endregion
 
+            #region 代理模式
+            Console.WriteLine("\n===============代理模式===============");
+            ProxyExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
