@@ -152,6 +152,19 @@ namespace CSharp设计模式
             Console.WriteLine("---------------------");
             #endregion
 
+            #region 外观模式
+            Console.WriteLine("===============外观模式===============");
+            RegistrationFacade facade = new RegistrationFacade();
+            if (facade.RegisterCourse("设计模式", "Learning Hard"))
+            {
+                Console.WriteLine("选课成功");
+            }
+            else
+            {
+                Console.WriteLine("选课失败");
+            }
+            #endregion
+
             Console.ReadLine();
         }
     }
