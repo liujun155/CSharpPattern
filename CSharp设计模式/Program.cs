@@ -180,6 +180,11 @@ namespace CSharp设计模式
             TemplateMethodExample.Run();
             #endregion
 
+            #region 命令模式
+            Console.WriteLine("\n===============命令模式===============");
+            CommandExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }

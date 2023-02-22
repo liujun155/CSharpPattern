@@ -57,6 +57,7 @@
     <Compile Include="12-享元模式\Flyweight.cs" />
     <Compile Include="13-代理模式\Proxy.cs" />
     <Compile Include="14-模板方法模式\TemplateMethod.cs" />
+    <Compile Include="15-命令模式\Command.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
