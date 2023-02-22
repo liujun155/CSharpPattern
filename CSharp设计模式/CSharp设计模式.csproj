@@ -54,6 +54,7 @@
     <Compile Include="09-装饰者模式\Decorator.cs" />
     <Compile Include="10-组合模式\Composite.cs" />
     <Compile Include="11-外观模式\Facade.cs" />
+    <Compile Include="12-享元模式\Flyweight.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
