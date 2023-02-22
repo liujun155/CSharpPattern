@@ -175,6 +175,11 @@ namespace CSharp设计模式
             ProxyExample.Run();
             #endregion
 
+            #region 模板方法模式
+            Console.WriteLine("\n===============模板方法模式===============");
+            TemplateMethodExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
