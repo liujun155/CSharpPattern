@@ -190,6 +190,11 @@ namespace CSharp设计模式
             IteratorExample.Run();
             #endregion
 
+            #region 观察者模式
+            Console.WriteLine("\n===============观察者模式===============");
+            ObserverExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
