@@ -60,6 +60,7 @@
     <Compile Include="15-命令模式\Command.cs" />
     <Compile Include="16-迭代器模式\Iterator.cs" />
     <Compile Include="17-观察者模式\Observer.cs" />
+    <Compile Include="18-中介者模式\Mediator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

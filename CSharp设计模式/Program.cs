@@ -195,6 +195,11 @@ namespace CSharp设计模式
             ObserverExample.Run();
             #endregion
 
+            #region 中介者模式
+            Console.WriteLine("\n===============中介者模式===============");
+            MediatorExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
