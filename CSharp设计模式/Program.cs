@@ -200,6 +200,11 @@ namespace CSharp设计模式
             MediatorExample.Run();
             #endregion
 
+            #region 状态者模式
+            Console.WriteLine("\n===============状态者模式===============");
+            StateExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
