@@ -215,6 +215,11 @@ namespace CSharp设计模式
             ChainOfResponsibilityExample.Run();
             #endregion
 
+            #region 访问者模式
+            Console.WriteLine("\n===============访问者模式===============");
+            VistorExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }

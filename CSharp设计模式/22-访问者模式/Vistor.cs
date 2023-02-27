@@ -35,62 +35,148 @@ namespace CSharp设计模式
     {
         public static void Run()
         {
+            var zoo = new Zoo();
 
+            var lion1 = new Lion { Name = "Simba", Weight = 150 };
+            var lion2 = new Lion { Name = "Mufasa", Weight = 200 };
+            var elephant1 = new Elephant { Name = "Dumbo", Weight = 500 };
+            var elephant2 = new Elephant { Name = "Jumbo", Weight = 800 };
+
+            zoo.AddAnimal(lion1);
+            zoo.AddAnimal(lion2);
+            zoo.AddAnimal(elephant1);
+            zoo.AddAnimal(elephant2);
+
+            WeightVisitor weightVisitor = new WeightVisitor();
+            zoo.Operate(weightVisitor);
+            Console.WriteLine($"Total weight: {weightVisitor.TotalWeight}");
+
+            CountVisitor countVisitor = new CountVisitor();
+            zoo.Operate(countVisitor);
+            Console.WriteLine($"Lion count: {countVisitor.LionCount}");
+            Console.WriteLine($"Elephant count: {countVisitor.ElephantCount}");
         }
     }
 
     /// <summary>
-    /// 抽象元素
+    /// 抽象元素类，定义元素所拥有的方法和属性，提供接受访问者访问的抽象方法
     /// </summary>
     public abstract class Animal
     {
+        // 名称
+        public string Name { get; set; }
+        // 体重
+        public double Weight { get; set; }
+
+        // 接受访问者访问的抽象方法
         public abstract void Accept(IVisitor visitor);
     }
 
     /// <summary>
-    /// 具体元素Lion
+    /// 具体元素Lion，实现抽象元素所定义的接口，提供Accept方法用于接受访问者的访问
     /// </summary>
     public class Lion : Animal
     {
         public override void Accept(IVisitor visitor)
         {
+            // 调用访问者的VisitLion方法
             visitor.VisitLion(this);
         }
     }
 
     /// <summary>
-    /// 具体元素Elephant
+    /// 具体元素Elephant，实现抽象元素所定义的接口，提供Accept方法用于接受访问者的访问
     /// </summary>
     public class Elephant : Animal
     {
         public override void Accept(IVisitor visitor)
         {
+            // 调用访问者的VisitElephant方法
             visitor.VisitElephant(this);
         }
     }
 
     /// <summary>
-    /// 抽象访问者
+    /// 抽象访问者类，定义访问者所拥有的方法，用于对元素进行操作
     /// </summary>
     public interface IVisitor
     {
+        // 访问Lion元素的方法
         void VisitLion(Lion lion);
+
+        // 访问Elephant元素的方法
         void VisitElephant(Elephant elephant);
     }
 
     /// <summary>
-    /// 计算体重（具体访问者）
+    /// 计算体重（具体访问者类，实现IVisitor接口，对元素进行具体的操作）
     /// </summary>
     public class WeightVisitor : IVisitor
     {
+        public double TotalWeight { get; private set; }
+
+        // 访问Lion元素的方法
         public void VisitLion(Lion lion)
         {
-            throw new NotImplementedException();
+            TotalWeight += lion.Weight;
         }
 
+        // 访问Elephant元素的方法
         public void VisitElephant(Elephant elephant)
         {
-            throw new NotImplementedException();
+            TotalWeight += elephant.Weight;
+        }
+    }
+
+    /// <summary>
+    /// 计算数量（具体访问者类，实现IVisitor接口，对元素进行具体的操作）
+    /// </summary>
+    public class CountVisitor : IVisitor
+    {
+        // 狮子数量
+        public int LionCount { get; private set; }
+        // 大象数量
+        public int ElephantCount { get; private set; }
+
+        // 访问Lion元素的方法
+        public void VisitLion(Lion lion)
+        {
+            LionCount++;
+        }
+
+        // 访问Elephant元素的方法
+        public void VisitElephant(Elephant elephant)
+        {
+            ElephantCount++;
+        }
+    }
+
+    /// <summary>
+    /// 对象结构类，用于存储元素，并提供对元素进行操作的方法
+    /// </summary>
+    public class Zoo
+    {
+        private List<Animal> Animals { get; } = new List<Animal>();
+
+        // 添加动物
+        public void AddAnimal(Animal animal)
+        {
+            Animals.Add(animal);
+        }
+
+        // 移除动物
+        public void RemoveAnimal(Animal animal)
+        {
+            Animals.Remove(animal);
+        }
+
+        // 对动物进行操作，接受访问者的访问
+        public void Operate(IVisitor visitor)
+        {
+            foreach (var animal in Animals)
+            {
+                animal.Accept(visitor);
+            }
         }
     }
 }
