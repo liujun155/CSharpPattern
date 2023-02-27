@@ -210,6 +210,11 @@ namespace CSharp设计模式
             StragetyExample.Run();
             #endregion
 
+            #region 责任链模式
+            Console.WriteLine("\n===============责任链模式===============");
+            ChainOfResponsibilityExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
