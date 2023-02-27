@@ -205,6 +205,11 @@ namespace CSharp设计模式
             StateExample.Run();
             #endregion
 
+            #region 策略者模式
+            Console.WriteLine("\n===============策略者模式===============");
+            StragetyExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
