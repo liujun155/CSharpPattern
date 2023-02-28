@@ -10,8 +10,13 @@ namespace CSharp设计模式
     {
         static void Main(string[] args)
         {
+            #region 单例模式
+            Console.WriteLine("===============单例模式===============");
+            SingletonExample.Run();
+            #endregion
+
             #region 简单工厂模式
-            Console.WriteLine("===============简单工厂模式===============");
+            Console.WriteLine("\n===============简单工厂模式===============");
             Food food1 = FoodSimpleFactory.CreateFood("西红柿炒蛋");
             food1.Print();
             Food food2 = FoodSimpleFactory.CreateFood("土豆肉丝");
