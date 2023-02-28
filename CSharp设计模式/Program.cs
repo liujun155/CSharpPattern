@@ -37,15 +37,7 @@ namespace CSharp设计模式
 
             #region 原型模式
             Console.WriteLine("\n===============原型模式===============");
-            // 孙悟空原型
-            MonkeyKingPrototype monkeyKingPrototype = new ConcretePrototype("MonkeyKing");
-
-            // 克隆一个
-            MonkeyKingPrototype cloneMonkeyKing1 = monkeyKingPrototype.Clone() as ConcretePrototype;
-            Console.WriteLine($"Cloned: {cloneMonkeyKing1.Id}");
-            // 克隆两个
-            MonkeyKingPrototype cloneMonkeyKing2 = monkeyKingPrototype.Clone() as ConcretePrototype;
-            Console.WriteLine($"Cloned: {cloneMonkeyKing2.Id}");
+            PrototypeExample.Run();
             #endregion
 
             #region 适配器模式
