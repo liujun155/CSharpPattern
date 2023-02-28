@@ -220,6 +220,11 @@ namespace CSharp设计模式
             VistorExample.Run();
             #endregion
 
+            #region 备忘录模式
+            Console.WriteLine("\n===============备忘录模式===============");
+            MementoExample.Run();
+            #endregion
+
             Console.ReadLine();
         }
     }
