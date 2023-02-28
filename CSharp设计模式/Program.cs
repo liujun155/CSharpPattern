@@ -22,31 +22,12 @@ namespace CSharp设计模式
 
             #region 工厂方法模式
             Console.WriteLine("\n===============工厂方法模式===============");
-            // 初始化做菜的两个工厂
-            Creator tomatoScrambledEggsFactory = new TomatoScrambledEggsFactory();
-            Creator shreddedPorkWithPotatoesFactory = new ShreddedPorkWithPotatoesFactory();
-            // 开始做西红柿炒蛋
-            Food food21 = tomatoScrambledEggsFactory.CreateFoodFactory();
-            food21.Print();
-            // 开始做土豆肉丝
-            Food food22 = shreddedPorkWithPotatoesFactory.CreateFoodFactory();
-            food22.Print();
+            FactoryMethodExample.Run();
             #endregion
 
             #region 抽象工厂模式
             Console.WriteLine("\n===============抽象工厂模式===============");
-            // 奔驰工厂制造奔驰的轿车和SUV
-            AbstractFactory benzFactory = new BenzFactory();
-            Car benzCar = benzFactory.CreateCar();
-            benzCar.Print();
-            Suv benzSuv = benzFactory.CreateSuv();
-            benzSuv.Print();
-            // 宝马工厂制造宝马的轿车和SUV
-            AbstractFactory bmwFactory = new BMWFactory();
-            Car bmwCar = bmwFactory.CreateCar();
-            bmwCar.Print();
-            Suv bmwSuv = bmwFactory.CreateSuv();
-            bmwSuv.Print();
+            AbstractFactoryExample.Run();
             #endregion
 
             #region 建造者模式
