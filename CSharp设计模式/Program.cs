@@ -17,10 +17,7 @@ namespace CSharp设计模式
 
             #region 简单工厂模式
             Console.WriteLine("\n===============简单工厂模式===============");
-            Food food1 = FoodSimpleFactory.CreateFood("西红柿炒蛋");
-            food1.Print();
-            Food food2 = FoodSimpleFactory.CreateFood("土豆肉丝");
-            food2.Print();
+            SimpleFactoryExample.Run();
             #endregion
 
             #region 工厂方法模式
